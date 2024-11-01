@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: host
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - ENVIRONMENT=development
+      - DEBUG=true
+      - POSTGRES_HOST=host.docker.internal
+      - POSTGRES_PORT=5440
+      - POSTGRES_DB=BookStore
+      - POSTGRES_USER=postgres
+      - POSTGRES_PWD=qwerty123
+      
